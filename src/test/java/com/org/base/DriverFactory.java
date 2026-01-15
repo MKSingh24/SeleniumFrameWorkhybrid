@@ -10,11 +10,11 @@ public class DriverFactory {
 
     public static WebDriver initDriver() {
 //        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        driver.set(new ChromeDriver(options));
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless=new");
+//        options.addArguments("--no-sandbox");
+//        options.addArguments("--disable-dev-shm-usage");
+        driver.set(new ChromeDriver());
         getDriver().manage().window().maximize();
         return getDriver();
     }
