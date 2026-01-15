@@ -4,7 +4,7 @@ pipeline {
 
        stage('Checkout Code') {
             steps {
-                git branch: 'main',
+                git branch: 'master',
                     url: 'https://github.com/MKSingh24/SeleniumFrameWorkhybrid.git'
             }
         }
