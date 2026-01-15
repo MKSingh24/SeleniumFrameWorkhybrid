@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Run Tests') {
             steps {
-                bat 'mvn clean test'
+                bat 'mvn clean test --DsuiteXmlFile=testng.xml'
             }
         }
 
@@ -18,7 +18,7 @@ pipeline {
 
     post {
         always {
-            junit 'target/surefire-reports/*.xml'
+            junit allowEmptyResults: true, testResults: 'target/surefire-reports/*.xml'
         }
     }
 }
