@@ -17,8 +17,10 @@ public class ExcelUtil {
 
                 int rows = sheet.getPhysicalNumberOfRows();
                 int cols = sheet.getRow(0).getPhysicalNumberOfCells();
+//                  int rows = sheet.getLastRowNum();
+//                  int cols = sheet.getRow(0).getLastCellNum();
 
-                Object[][] data = new Object[rows - 1][cols];
+                Object[][] data = new Object[rows-1][cols];
 
                 for (int i = 1; i < rows; i++) {
                     for (int j = 0; j < cols; j++) {
