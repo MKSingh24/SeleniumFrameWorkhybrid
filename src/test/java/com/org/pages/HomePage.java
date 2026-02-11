@@ -12,6 +12,9 @@ public class HomePage {
     @FindBy(xpath = "//span[@class='maintext']")
     private WebElement myAccountIcon;
 
+    @FindBy(xpath = "//div[text()='Welcome back Mukesh']")
+    private WebElement myAccountProfile;
+
     public HomePage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
