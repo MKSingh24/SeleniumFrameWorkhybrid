@@ -7,21 +7,23 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 
-    private WebDriver driver;
-
     @FindBy(xpath = "//span[@class='maintext']")
     private WebElement myAccountIcon;
 
-    @FindBy(xpath = "//div[text()='Welcome back Mukesh']")
-    private WebElement myAccountProfile;
 
     public HomePage(WebDriver driver){
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public HomePage MyAccountIconPage(){
-         myAccountIcon.getText();
-         return this;
+    public String getMyAccountIconText(){
+        return myAccountIcon.getText();
+    }
+    public boolean isMyAccountIconDisplayed(){
+        return myAccountIcon.isDisplayed();
+    }
+
+    public boolean verifyAccountIconText(){
+        String iconText = getMyAccountIconText();
+        return iconText != null && !iconText.isEmpty();
     }
 }
